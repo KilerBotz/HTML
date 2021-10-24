@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <style type="text/css">
+  .loading {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: fixed
+  }
+  .animasi {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    font-size: 5vh;
+    font-weight: bolder;
+    align-items: center;
+    font-family: monospace;
+    justify-content: center;
+    background-color: #0000ff
+  }
+  .animasi span {
+    animation: pulse 0.5s alternate infinite ease-in-out;
+  }
+  .animasi span:nth-child(odd) {
+    animation-delay: 0.1s;
+  }
+  @keyframes pulse {
+    to {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div class="animasi">
+      <span>.....</span>
+    </div>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    $(".loading").delay(1000).fadeOut(500,"linear");
+  });
+  </script>
+</body>
+</html>
